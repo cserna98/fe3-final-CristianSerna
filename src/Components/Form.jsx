@@ -7,6 +7,11 @@ const Form = () => {
   return (
     <div>
       <form>
+        <label htmlFor="UserName">Username</label>
+        <input type="text" />
+
+        <label htmlFor="password">password</label>
+        <input type="password" />
       </form>
     </div>
   );
