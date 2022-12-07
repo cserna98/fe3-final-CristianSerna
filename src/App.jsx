@@ -16,9 +16,9 @@ function App() {
     <Navbar/>
     <Routes>
       <Route path="/" element={<Home></Home>}/>
-        <Route path="Detail" element={<Detail></Detail>}/>
-        <Route path="Favs" element={<Favs></Favs>}/>
-        <Route path="Contact" element={<Contact></Contact>}/>        
+        <Route path="/Detail/:id" element={<Detail></Detail>}/>
+        <Route path="/Favs" element={<Favs></Favs>}/>
+        <Route path="/Contact" element={<Contact></Contact>}/>        
     </Routes>    
     <Footer/>
     </div>

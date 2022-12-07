@@ -1,33 +1,38 @@
-import { useContext } from "react";
-import { useReducer } from "react";
-import { useEffect } from "react";
-import { createContext } from "react";
+import { useContext,useEffect,useReducer,createContext, useState} from "react";
+
+
+
+
+
 
 // Usecontext
 export const ContextGlobal = createContext();
-// UseReducer
 export const initialState = "light" 
-export const ContextProvider = ({ children }) => {
 
+export const ContextProvider = ({children}) => {
+  // usereducer para cambiar el valor del tema
   const[theme,dispath]= useReducer((state, action)=>{
     console.log(state)      
     return    state === "light" ? "dark" : "light" ;
-  },initialState)
+  },initialState)  
 
-  //Aqui deberan implementar la logica propia del Context, utilizando el hook useMemo
+  // useEffect para cargar la funcion asincronica que trae los datos de la api
   useEffect(()=>{
     getdataApi()
     console.log(theme)   
-  })
-
+  },[])
+  // usestate para guardar la api en un estado.
+  const [dentists,setUser] = useState([])
+  // funcion asincronica que trae datos de la api
   async function getdataApi(){
     let response = await fetch('https://jsonplaceholder.typicode.com/users');
-    let user = await response.json();       
+    let dentists = await response.json();
+    setUser(dentists)       
   };
 
 
   return (
-    <ContextGlobal.Provider value={{theme,dispath}}>
+    <ContextGlobal.Provider value={{theme,dispath,dentists}}>
       {children}
     </ContextGlobal.Provider>
   );

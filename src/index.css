@@ -120,3 +120,8 @@ tr:nth-child(even) {
 .dark > a {
   color: white;
 }
+
+#imgDoctor{
+  width: 80%;
+  height: 50%;
+}
