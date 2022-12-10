@@ -6,27 +6,16 @@ import { useEffect } from "react";
 
 const Card = ({dentistInfo}) => { 
 
-    const [isfav,setisFav] = useState(false)  
-    const [fav,Setfav] = useState([])   
+    const [isfav,setisFav] = useState(false)       
 
-    const addFav = ()=>{
-        setisFav(!isfav)
-        if(isfav){
-        localStorage.setItem(dentistInfo.id, JSON.stringify(dentistInfo))       
-      } else{
-        localStorage.removeItem(dentistInfo.id);
-      }    
+    const addFav = ()=>{                  
         console.log(isfav)
+        if(localStorage.getItem(dentistInfo.id) !== undefined ){          
+          localStorage.setItem(dentistInfo.id, JSON.stringify(dentistInfo)) 
+          setisFav(true)           
+        }
      // Aqui iria la logica para agregar la Card en el localStorage
-  }
-  useEffect(()=>{
-      if(isfav){
-        let newFav = JSON.parse(localStorage.getItem(dentistInfo.id))   
-        console.log(newFav)    
-        Setfav([...fav,newFav]) 
-        console.log(fav)  
-      }        
-  },[isfav])
+  } 
 
   return (
     <div className="card">        
@@ -41,7 +30,7 @@ const Card = ({dentistInfo}) => {
         {/* No debes olvidar que la Card a su vez servira como Link hacia la pagina de detalle */}
 
         {/* Ademas deberan integrar la logica para guardar cada Card en el localStorage */}
-        <button onClick={addFav} className="favButton">{!isfav ? "Add fav" : "erase fav" }</button>
+        <button onClick={addFav} className="favButton">{!isfav ? "Add fav" : "is favorite" }</button>
     </div>
   );
 };
