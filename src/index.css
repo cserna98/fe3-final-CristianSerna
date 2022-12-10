@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
 }
 
 code {
@@ -19,7 +20,7 @@ code {
   cursor: pointer;
 }
 
-h1{
+h1,h3,h2,p{
   text-align: center;
 }
 
@@ -125,3 +126,8 @@ tr:nth-child(even) {
   width: 80%;
   height: 50%;
 }
+
+#contact,.app{
+  height: 100%;
+}
+

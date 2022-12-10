@@ -6,13 +6,14 @@ import Home from "./Routes/Home"
 import Detail from "./Routes/Detail"
 import Favs from "./Routes/Favs"
 import Contact from "./Routes/Contact"
+import { GlobalContext } from './Components/utils/global.context'
 
 
 function App() {
-
+  const {theme} = GlobalContext() 
 
   return ( 
-    <div className="App">
+    <div className={`app ${theme}`} >
     <Navbar/>
     <Routes>
       <Route path="/" element={<Home></Home>}/>

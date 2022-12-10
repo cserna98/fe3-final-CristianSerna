@@ -8,7 +8,7 @@ const Navbar = () => {
   const {theme,dispath} = GlobalContext()
 
   return (
-    <nav>
+    <nav className='nav'>
       <Link to ="/">Home</Link>      
       <Link to ="Favs">Favs</Link>
       <Link to ="Contact">Contacts</Link>

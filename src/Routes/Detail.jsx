@@ -17,6 +17,7 @@ const Detail = () => {
   let dentist = await response.json();
   setdentist(dentist)     
   console.log(dentist)  
+  //<tbody><tr><th><tr><tbody>
 };
 useEffect(()=>{
   getdentist()
@@ -27,11 +28,15 @@ useEffect(()=>{
 
   return (
     <>
-      <h1>Detail Dentist id </h1>
-      <h3>Name: {dentist.name}</h3>
-      <p> Email: {dentist.email}</p>
-      <p>Phone: {dentist.phone}</p>
-      <p>Web site: {dentist.website}</p>
+    <table>
+    <tbody>
+      <tr><th>Name</th><td>{dentist.name}</td></tr>
+      <tr><th>Email</th><td>{dentist.email}</td></tr>
+      <tr><th>Phone</th><td>{dentist.phone}</td></tr>
+      <tr><th>web site</th><td>{dentist.website}</td></tr>
+      <tr></tr>
+    </tbody>      
+    </table>       
       {/* aqui deberan renderizar la informacion en detalle de un user en especifico */}
       {/* Deberan mostrar el name - email - phone - website por cada user en especifico */}
     </>

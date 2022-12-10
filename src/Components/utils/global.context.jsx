@@ -29,10 +29,12 @@ export const ContextProvider = ({children}) => {
     let dentists = await response.json();
     setUser(dentists)       
   };
+// local storage para favoritos
+const [isfav,setisFav] = useState(false) 
 
 
   return (
-    <ContextGlobal.Provider value={{theme,dispath,dentists}}>
+    <ContextGlobal.Provider value={{theme,dispath,dentists,isfav,setisFav}}>
       {children}
     </ContextGlobal.Provider>
   );
