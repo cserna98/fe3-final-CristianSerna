@@ -4,8 +4,11 @@ import { GlobalContext } from '../Components/utils/global.context'
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
+
 const Home = () => {
-  const {theme,dentists} = GlobalContext()
+  const {theme,dentists,fav,Setfav} = GlobalContext()
+  
+
   console.log(dentists)
   return (
     <main className="" >

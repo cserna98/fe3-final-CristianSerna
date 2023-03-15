@@ -6,16 +6,43 @@ import { useEffect } from "react";
 
 const Card = ({dentistInfo}) => { 
 
-    const [isfav,setisFav] = useState(false)       
+        
+    const {fav,change, setchenge} = GlobalContext()
+    const [isfav,setisFav] = useState() 
 
-    const addFav = ()=>{                  
-        console.log(isfav)
-        if(localStorage.getItem(dentistInfo.id) !== undefined ){          
-          localStorage.setItem(dentistInfo.id, JSON.stringify(dentistInfo)) 
-          setisFav(true)           
+
+    const removeFav = () =>{
+      localStorage.removeItem(dentistInfo.id);
+      setisFav(false)
+
+    }
+    const addFav = ()=>{ 
+      setchenge(!change)   
+      console.log(localStorage)   
+        if(isfav){
+          removeFav()
+        }else{
+          localStorage.setItem(dentistInfo.id, JSON.stringify(dentistInfo))
+          setisFav(true)
         }
+        
      // Aqui iria la logica para agregar la Card en el localStorage
   } 
+
+  useEffect(()=>{
+    const foundObject = fav.find(obj => obj.id === dentistInfo.id);
+
+if (foundObject) {
+  console.log("El objeto existe en el array:", foundObject);
+  setisFav(true)
+} else {
+  console.log("El objeto no existe en el array");
+  setisFav(false)
+}
+  },[])
+ 
+  
+    
 
   return (
     <div className="card">        
@@ -30,7 +57,7 @@ const Card = ({dentistInfo}) => {
         {/* No debes olvidar que la Card a su vez servira como Link hacia la pagina de detalle */}
 
         {/* Ademas deberan integrar la logica para guardar cada Card en el localStorage */}
-        <button onClick={addFav} className="favButton">{!isfav ? "Add fav" : "is favorite" }</button>
+        <button onClick={addFav} className="favButton">{! isfav ? "Add fav" : "remove favorite" }</button>
     </div>
   );
 };
