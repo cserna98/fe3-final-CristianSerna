@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/fe3-final-CristianSerna/static/css/main.32a88f0e.css",
-    "main.js": "/fe3-final-CristianSerna/static/js/main.461de0b4.js",
+    "main.js": "/fe3-final-CristianSerna/static/js/main.4ba0a1cf.js",
     "static/media/doctor.jpg": "/fe3-final-CristianSerna/static/media/doctor.eb13e855073291c62b00.jpg",
     "index.html": "/fe3-final-CristianSerna/index.html",
     "main.32a88f0e.css.map": "/fe3-final-CristianSerna/static/css/main.32a88f0e.css.map",
-    "main.461de0b4.js.map": "/fe3-final-CristianSerna/static/js/main.461de0b4.js.map"
+    "main.4ba0a1cf.js.map": "/fe3-final-CristianSerna/static/js/main.4ba0a1cf.js.map"
   },
   "entrypoints": [
     "static/css/main.32a88f0e.css",
-    "static/js/main.461de0b4.js"
+    "static/js/main.4ba0a1cf.js"
   ]
 }
