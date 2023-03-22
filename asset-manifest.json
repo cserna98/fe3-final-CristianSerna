@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/fe3-final-CristianSerna/static/css/main.32a88f0e.css",
+    "main.js": "/fe3-final-CristianSerna/static/js/main.3f44de46.js",
+    "index.html": "/fe3-final-CristianSerna/index.html",
+    "main.32a88f0e.css.map": "/fe3-final-CristianSerna/static/css/main.32a88f0e.css.map",
+    "main.3f44de46.js.map": "/fe3-final-CristianSerna/static/js/main.3f44de46.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.32a88f0e.css",
+    "static/js/main.3f44de46.js"
+  ]
+}
